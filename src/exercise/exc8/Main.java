@@ -14,11 +14,15 @@ public class Main {
         for(String word:inputWords){
             wordCount.put(word,wordCount.getOrDefault(word,0)+1);
         }
-
+        StringBuilder result=new StringBuilder();
         for(var word: wordCount.entrySet()){
             if(word.getValue()%2==1){
-                System.out.print(word.getKey()+", ");
+                result.append(word.getKey()).append(", ");
             }
         }
+        if(result.length()>0){
+            result.setLength(result.length()-2);
+        }
+        System.out.println(result);
     }
 }
